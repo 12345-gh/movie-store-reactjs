@@ -1,0 +1,40 @@
+.film-item {
+  background: tomato;
+  padding: 2px;
+  max-width: 300px;
+  max-height: 600px;
+  margin-top: 10px;
+  overflow: hidden;
+  /* Disable horizontal scroll */ }
+  .film-item .image {
+    max-width: 300px;
+    max-height: 450px;
+    position: relative;
+    opacity: 1;
+    transition: .5s ease; }
+    .film-item .image .hover-block {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 100%; }
+      .film-item .image .hover-block svg {
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+        padding: 5px; }
+    .film-item .image:hover img {
+      opacity: 0.3; }
+    .film-item .image:hover .hover-block {
+      display: block; }
+      .film-item .image:hover .hover-block img {
+        opacity: 1; }
+  .film-item .text {
+    margin: 0 5px;
+    padding: 0;
+    color: #fafafa; }
+    .film-item .text .title {
+      margin: 1px;
+      text-align: center; }
+    .film-item .text p {
+      margin: 1px; }
