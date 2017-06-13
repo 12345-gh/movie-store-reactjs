@@ -17,12 +17,14 @@
       position: absolute;
       top: 20px;
       left: 10px;
-      width: 100%; }
+      width: 45px; }
       .film-item .image .hover-block svg {
         width: 35px;
         height: 35px;
         vertical-align: middle;
         padding: 5px; }
+        .film-item .image .hover-block svg path {
+          fill: #1de9b6 !important; }
     .film-item .image:hover img {
       opacity: 0.3; }
     .film-item .image:hover .hover-block {

@@ -20,13 +20,16 @@
       position: absolute;
       top: 20px;
       left: 10px;
-      width: 100%;
+      width: 45px;
 
       svg {
         width: 35px;
         height: 35px;
         vertical-align: middle;
         padding: 5px;
+        path {
+          fill: $color-active !important;
+        }
       }
     }
 

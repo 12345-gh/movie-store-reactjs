@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './FilmItem.css';
 import emptyFavorites from '../../img/favorite-h-empty-white.svg';
 import fullFavorites from '../../img/favorite-h-full-white.svg';
-import '../../common/scripts/svg-style';
 import idb from '../../common/providers/indexeddb-provider';
+import svgImage from '../../common/scripts/svg-image';
 
 class FilmItem extends Component {
 	constructor(props) {
@@ -18,8 +18,13 @@ class FilmItem extends Component {
 		this.onClickRemoveToFavorites = this.onClickRemoveToFavorites.bind(this);
 	}
 
+	componentDidMount() {
+		svgImage.updateSvg();
+	}
+
 	onClickAddToFavorites(item) {
 		return () => {
+			console.log(item);
 			idb.putData(
 				item.id,
 				item.title,
@@ -56,22 +61,26 @@ class FilmItem extends Component {
 				favoriteAddRemoveImg;
 
 			addToFavoritesImg =
-				<img src={emptyFavorites}
-				     height="35"
-				     width="35"
-				     className="svg"
-				     title="Add to favorite"
+				<div title="Add to favorite"
 				     onClick={ this.onClickAddToFavorites(item) }
-				/>;
+				>
+					<img src={emptyFavorites}
+					     height="35"
+					     width="35"
+					     className="svg"
+					/>
+				</div>;
 
 			removeToFavoritesImg =
-				<img src={fullFavorites}
-				     height="35"
-				     width="35"
-				     className="svg"
-				     title="Remove from favorite"
-				     onClick={ this.onClickRemoveToFavorites(item) }
-				/>;
+				<div title="Remove from favorite"
+					onClick={ this.onClickRemoveToFavorites(item) }
+				>
+					<img src={fullFavorites}
+					     height="35"
+					     width="35"
+					     className="svg"
+					/>
+				</div>;
 
 			favoriteAddRemoveImg =
 				<div className='hover-block'>
